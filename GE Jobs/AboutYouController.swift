@@ -16,6 +16,8 @@ class AboutYouController: UITableViewController {
         navigationItem.rightBarButtonItem?.isEnabled = false;
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel));
         navigationItem.leftBarButtonItem?.tintColor = .white;
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Application", style: .plain, target: self, action: #selector(cancel));
+        navigationController?.navigationBar.tintColor = .white;
     }
 
     func done() {
@@ -23,8 +25,8 @@ class AboutYouController: UITableViewController {
     }
 
     func cancel() {
-        print("Canceling!");
         self.performSegue(withIdentifier: "cancelApplicationSegue", sender: self);
+        // navigationController?.pushViewController(DepartmentsController(), animated: true)
     }
 
 }

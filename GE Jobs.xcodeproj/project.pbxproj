@@ -15,6 +15,7 @@
 		E53A028F1E2BD45C00647EB0 /* JobApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A028E1E2BD45C00647EB0 /* JobApplicationController.swift */; };
 		E53A02931E2BDC6000647EB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E53A02921E2BDC6000647EB0 /* Assets.xcassets */; };
 		E53A02951E2BF27000647EB0 /* DepartmentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A02941E2BF27000647EB0 /* DepartmentDataSource.swift */; };
+		E53A02971E2DBBCB00647EB0 /* AboutYouController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A02961E2DBBCB00647EB0 /* AboutYouController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E53A028E1E2BD45C00647EB0 /* JobApplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobApplicationController.swift; sourceTree = "<group>"; };
 		E53A02921E2BDC6000647EB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E53A02941E2BF27000647EB0 /* DepartmentDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentDataSource.swift; sourceTree = "<group>"; };
+		E53A02961E2DBBCB00647EB0 /* AboutYouController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutYouController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				E53A02861E2BCE5300647EB0 /* Info.plist */,
 				E53A028E1E2BD45C00647EB0 /* JobApplicationController.swift */,
 				E53A02941E2BF27000647EB0 /* DepartmentDataSource.swift */,
+				E53A02961E2DBBCB00647EB0 /* AboutYouController.swift */,
 			);
 			path = "GE Jobs";
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				E53A02951E2BF27000647EB0 /* DepartmentDataSource.swift in Sources */,
 				E53A028F1E2BD45C00647EB0 /* JobApplicationController.swift in Sources */,
 				E53A027D1E2BCE5300647EB0 /* ViewController.swift in Sources */,
+				E53A02971E2DBBCB00647EB0 /* AboutYouController.swift in Sources */,
 				E53A027B1E2BCE5300647EB0 /* AppDelegate.swift in Sources */,
 				E53A028D1E2BCF8C00647EB0 /* SplashController.swift in Sources */,
 			);

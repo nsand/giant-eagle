@@ -11,6 +11,8 @@ import UIKit
 class AboutYouController: UITableViewController {
     var departmentDataSource: DepartmentDataSource = DepartmentDataSource();
 
+    @IBOutlet weak var departmentList: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad();
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Apply", style: .done, target: self, action: #selector(done));
@@ -39,4 +41,7 @@ class AboutYouController: UITableViewController {
         }
     }
 
+    func updateDepartments() {
+        departmentList.text = departmentDataSource.selected.joined(separator: ", ");
+    }
 }

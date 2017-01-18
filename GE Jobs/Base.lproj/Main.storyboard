@@ -146,6 +146,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="UT4-vs-Axt" kind="show" identifier="departmentsSegue" id="Msz-es-TGd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -225,7 +228,6 @@
                     </navigationItem>
                     <connections>
                         <segue destination="UHC-8e-N2p" kind="unwind" identifier="cancelApplicationSegue" unwindAction="unwindFromApplicationWithSegue:" id="B0u-aU-LV8"/>
-                        <segue destination="UT4-vs-Axt" kind="show" identifier="departmentsSegue" id="wzd-UP-c4I"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rqt-ug-Jl8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -233,10 +235,10 @@
             </objects>
             <point key="canvasLocation" x="855" y="719"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Departments Controller-->
         <scene sceneID="Uds-nO-zYh">
             <objects>
-                <tableViewController id="UT4-vs-Axt" sceneMemberID="viewController">
+                <tableViewController id="UT4-vs-Axt" customClass="DepartmentsController" customModule="GE_Jobs" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8o4-18-wK9">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="980"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

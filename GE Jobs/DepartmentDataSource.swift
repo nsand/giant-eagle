@@ -31,7 +31,7 @@ class DepartmentDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
         Department("Management"),
         Department("Meat"),
         Department("Prepared Foods"),
-        Department("Produce", true),
+        Department("Produce"),
         Department("Starbucks")
     ];
 

@@ -9,16 +9,13 @@
 import UIKit
 
 class DepartmentsController: UITableViewController {
+    var ds: DepartmentDataSource?;
+
     override func loadView() {
         super.loadView();
         navigationItem.title = "Departments";
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(done));
-        navigationItem.rightBarButtonItem?.tintColor = .white;
-    }
-    func done() {
-        
-    }
-    func cancel() {
-        
+
+        tableView.dataSource = ds;
+        tableView.delegate = ds;
     }
 }

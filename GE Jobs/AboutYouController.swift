@@ -9,6 +9,8 @@
 import UIKit
 
 class AboutYouController: UITableViewController {
+    var departmentDataSource: DepartmentDataSource = DepartmentDataSource();
+
     override func viewDidLoad() {
         super.viewDidLoad();
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Apply", style: .done, target: self, action: #selector(done));
@@ -27,6 +29,14 @@ class AboutYouController: UITableViewController {
     func cancel() {
         self.performSegue(withIdentifier: "cancelApplicationSegue", sender: self);
         // navigationController?.pushViewController(DepartmentsController(), animated: true)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender);
+        if let destination = segue.destination as? DepartmentsController {
+            // Add the department datasource to the department controller
+            destination.ds = departmentDataSource;
+        }
     }
 
 }

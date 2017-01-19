@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E523F3931E306A8600CBD544 /* email.tpl in Resources */ = {isa = PBXBuildFile; fileRef = E523F3921E306A8600CBD544 /* email.tpl */; };
+		E523F3951E306EC400CBD544 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = E523F3941E306EC400CBD544 /* Email.swift */; };
 		E53A027B1E2BCE5300647EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A027A1E2BCE5300647EB0 /* AppDelegate.swift */; };
 		E53A027D1E2BCE5300647EB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A027C1E2BCE5300647EB0 /* ViewController.swift */; };
 		E53A02801E2BCE5300647EB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53A027E1E2BCE5300647EB0 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E523F3921E306A8600CBD544 /* email.tpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = email.tpl; sourceTree = "<group>"; };
+		E523F3941E306EC400CBD544 /* Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		E53A02771E2BCE5300647EB0 /* GE Jobs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GE Jobs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53A027A1E2BCE5300647EB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E53A027C1E2BCE5300647EB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 		E53A02791E2BCE5300647EB0 /* GE Jobs */ = {
 			isa = PBXGroup;
 			children = (
+				E523F3921E306A8600CBD544 /* email.tpl */,
 				E53A02921E2BDC6000647EB0 /* Assets.xcassets */,
 				E53A027A1E2BCE5300647EB0 /* AppDelegate.swift */,
 				E53A027C1E2BCE5300647EB0 /* ViewController.swift */,
@@ -75,6 +80,7 @@
 				E53A02941E2BF27000647EB0 /* DepartmentDataSource.swift */,
 				E53A02961E2DBBCB00647EB0 /* AboutYouController.swift */,
 				E5D5BEC31E2DDA9D0021F0D4 /* DepartmentsController.swift */,
+				E523F3941E306EC400CBD544 /* Email.swift */,
 			);
 			path = "GE Jobs";
 			sourceTree = "<group>";
@@ -141,6 +147,7 @@
 				E53A02851E2BCE5300647EB0 /* LaunchScreen.storyboard in Resources */,
 				E53A02931E2BDC6000647EB0 /* Assets.xcassets in Resources */,
 				E53A02801E2BCE5300647EB0 /* Main.storyboard in Resources */,
+				E523F3931E306A8600CBD544 /* email.tpl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +164,7 @@
 				E53A02971E2DBBCB00647EB0 /* AboutYouController.swift in Sources */,
 				E5D5BEC41E2DDA9D0021F0D4 /* DepartmentsController.swift in Sources */,
 				E53A027B1E2BCE5300647EB0 /* AppDelegate.swift in Sources */,
+				E523F3951E306EC400CBD544 /* Email.swift in Sources */,
 				E53A028D1E2BCF8C00647EB0 /* SplashController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

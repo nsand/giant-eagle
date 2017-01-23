@@ -1,6 +1,5 @@
 Name: {{name}}
 Phone Number: {{phone}}
-Birthdate: {{birthdate}}
 Is Over 18: {{is18}}
 
 Departments: {{departments}}

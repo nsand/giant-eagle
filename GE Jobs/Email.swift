@@ -9,14 +9,34 @@
 import Foundation
 
 class Email {
-    static var template: String? {
-        if let path = Bundle.main.path(forResource: "email", ofType: "tpl") {
-            return try? String(contentsOfFile: path, encoding: .utf8);
-        }
-        return nil;
+
+    static let API = "https://api.postmarkapp.com/email/withTemplate"
+    static var CONFIG : [String: String]? {
+        return NSDictionary(contentsOfFile: Bundle.main.path(forResource: "Email", ofType: "plist")!) as? [String: String]
     }
-    func send(_ variables: [String: String]) {
-        // Use NSRegularExpression with .matches to get the ranges of matches, find the string in the range, look up that string in the variables dictionary
-        print(Email.template!);
+
+    func send(_ data: [String : Any], done: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        if let config = Email.CONFIG {
+            let url = URL(string: Email.API)!
+            let session = URLSession.shared
+            var request = URLRequest(url: url)
+            let body : [String: Any] = [
+                "TemplateId": Int(config["template_id"]!)!,
+                "TemplateModel": data,
+                "InlineCss": true,
+                "From": config["from"]!,
+                "To": config["to"]!/*, TODO: Add this back
+                "Bcc": config["bcc"]!*/
+            ]
+            print(body)
+            request.httpMethod = "POST"
+            request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            request.addValue(config["token"]!, forHTTPHeaderField: "X-Postmark-Server-Token")
+            session.dataTask(with: request, completionHandler: done).resume()
+        }
+        else {
+            print("The configuration wasn't loaded")
+        }
     }
 }

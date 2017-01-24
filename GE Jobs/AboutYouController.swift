@@ -17,7 +17,7 @@ class AboutYouController: UITableViewController {
         super.viewDidLoad();
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Apply", style: .done, target: self, action: #selector(done));
         navigationItem.rightBarButtonItem?.tintColor = .white;
-        navigationItem.rightBarButtonItem?.isEnabled = false;
+        //navigationItem.rightBarButtonItem?.isEnabled = false;
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel));
         navigationItem.leftBarButtonItem?.tintColor = .white;
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Application", style: .plain, target: self, action: #selector(cancel));
@@ -26,6 +26,31 @@ class AboutYouController: UITableViewController {
 
     func done() {
         print("Done!");
+        let e = Email();
+        let person : [String : Any] = [
+            "person": [
+                "name": "Han Solo",
+                "phone": "910-555-0000",
+                "isOver18": "Yes",
+                "departments": "Deli, Grocery",
+                "availability": [
+                    "monday": "AM/PM",
+                    "tuesday": "AM/PM",
+                    "wednesday": "PM",
+                    "thursday": "PM",
+                    "friday": "AM/PM",
+                    "saturday": "-",
+                    "sunday": "-"
+                ]
+            ]
+        ]
+        e.send(person, done: { (data, response, error) in
+            if data != nil {
+                if let resp = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) {
+                  print(resp)  
+                }
+            }
+        });
     }
 
     func cancel() {

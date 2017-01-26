@@ -8,13 +8,18 @@
 
 import UIKit
 
-class AboutYouController: UITableViewController {
-    var departmentDataSource: DepartmentDataSource = DepartmentDataSource();
+class AboutYouController: UITableViewController, UITextFieldDelegate {
+
+    var person: Person!
+    var departmentDataSource: DepartmentDataSource = DepartmentDataSource()
 
     @IBOutlet weak var departmentList: UILabel!
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var phone: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad();
+        person = Person()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Apply", style: .done, target: self, action: #selector(done));
         navigationItem.rightBarButtonItem?.tintColor = .white;
         //navigationItem.rightBarButtonItem?.isEnabled = false;
@@ -22,35 +27,39 @@ class AboutYouController: UITableViewController {
         navigationItem.leftBarButtonItem?.tintColor = .white;
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Application", style: .plain, target: self, action: #selector(cancel));
         navigationController?.navigationBar.tintColor = .white;
+        name.delegate = self
+        phone.delegate = self
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        if let value = (textField.text as? NSString)?.replacingCharacters(in: range, with: string) {
+            switch textField {
+            case name:
+                person.name = value
+            case phone:
+                person.phone = value
+            default:
+                print("Unknown field")
+            }
+        }
+        return true
     }
 
     func done() {
-        print("Done!");
-        let e = Email();
-        let person : [String : Any] = [
-            "person": [
-                "name": "Han Solo",
-                "phone": "910-555-0000",
-                "isOver18": "Yes",
-                "departments": "Deli, Grocery",
-                "availability": [
-                    "monday": "AM/PM",
-                    "tuesday": "AM/PM",
-                    "wednesday": "PM",
-                    "thursday": "PM",
-                    "friday": "AM/PM",
-                    "saturday": "-",
-                    "sunday": "-"
-                ]
-            ]
-        ]
-        e.send(person, done: { (data, response, error) in
+        person.availability["monday"] = ["AM", "PM"]
+        person.availability["tuesday"] = ["AM"]
+        print(self.person.asDictionary())
+        // let e = Email();
+        /*
+        e.send(person.asDictionary(), done: { (data, response, error) in
             if data != nil {
                 if let resp = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) {
                   print(resp)  
                 }
             }
         });
+        */
     }
 
     func cancel() {
@@ -68,5 +77,6 @@ class AboutYouController: UITableViewController {
 
     func updateDepartments() {
         departmentList.text = departmentDataSource.selected.joined(separator: ", ");
+        person?.departments = departmentDataSource.selected
     }
 }

@@ -28,7 +28,7 @@ class Email {
                 "To": config["to"]!/*, TODO: Add this back
                 "Bcc": config["bcc"]!*/
             ]
-            print(body)
+
             request.httpMethod = "POST"
             request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
             request.addValue("application/json", forHTTPHeaderField: "Accept")

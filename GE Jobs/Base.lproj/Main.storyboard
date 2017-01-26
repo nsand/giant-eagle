@@ -80,6 +80,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                    <connections>
+                                                        <action selector="nameChanged:" destination="vWr-qX-ZRP" eventType="valueChanged" id="4hU-bc-ZiD"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -252,6 +255,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="departmentList" destination="R3X-3l-rjO" id="fzl-yD-Igf"/>
+                        <outlet property="name" destination="8Pn-lF-Amy" id="6rR-4x-eYk"/>
+                        <outlet property="phone" destination="lV9-Cl-4pB" id="dIK-4m-tsa"/>
                         <segue destination="UHC-8e-N2p" kind="unwind" identifier="cancelApplicationSegue" unwindAction="unwindFromApplicationWithSegue:" id="B0u-aU-LV8"/>
                     </connections>
                 </tableViewController>

@@ -44,6 +44,9 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
             case name:
                 person.name = value
             case phone:
+                if string.characters.count != 0 && Int(string) == nil {
+                    return false
+                }
                 person.phone = value
             default:
                 print("Unknown field")

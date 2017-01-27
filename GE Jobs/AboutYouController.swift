@@ -48,6 +48,17 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
         return true
     }
 
+    @IBAction func onOver18Change(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+            case 0:
+                person.isOver18 = true
+            case 1:
+                person.isOver18 = false
+            default:
+                person.isOver18 = nil
+        }
+    }
+
     func done() {
         person.availability["monday"] = ["AM", "PM"]
         person.availability["tuesday"] = ["AM"]

@@ -11,7 +11,7 @@ import Foundation
 class Person {
     var name: String?
     var phone: String?
-    var isOver18 = false
+    var isOver18: Bool?
     var departments = [String]()
     var availability : [String: [String]] = [
         "monday": [],
@@ -28,7 +28,7 @@ class Person {
             "person": [
                 "name": name ?? "Han Solo",
                 "phone": phone ?? "555-5555",
-                "isOver18": isOver18 ? "Yes": "No",
+                "isOver18": isOver18 != nil ? (isOver18! ? "Yes" : "No") : "Answer Not Provided",
                 "departments": departments.joined(separator: ", ")
             ]
         ]

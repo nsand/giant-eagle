@@ -141,6 +141,9 @@
                                                         <segment title="No"/>
                                                     </segments>
                                                     <color key="tintColor" red="1" green="0.0012486093739999999" blue="0.50131284269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="onOver18Change:" destination="vWr-qX-ZRP" eventType="valueChanged" id="Wy2-zi-kK3"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>

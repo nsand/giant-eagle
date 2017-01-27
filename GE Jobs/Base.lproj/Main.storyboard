@@ -118,31 +118,36 @@
                                         <rect key="frame" x="0.0" y="116" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vk5-xp-X5S" id="lKW-Db-vvS">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Over 18?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejS-Kd-EaA">
-                                                    <rect key="frame" x="28" y="11" width="95" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you over 18?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejS-Kd-EaA">
+                                                    <rect key="frame" x="20" y="11" width="149" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="S6e-jp-PKs"/>
+                                                        <constraint firstAttribute="height" constant="21" id="5cq-yw-tRF"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="d3H-7h-UQu">
-                                                    <rect key="frame" x="696" y="6" width="51" height="31"/>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D4B-sT-RKb">
+                                                    <rect key="frame" x="639" y="7" width="121" height="29"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="31" id="DXj-NA-ouP"/>
+                                                        <constraint firstAttribute="height" constant="28" id="YBU-4b-T4U"/>
+                                                        <constraint firstAttribute="width" constant="121" id="b4h-5Q-tYe"/>
                                                     </constraints>
-                                                    <color key="onTintColor" red="1" green="0.0012486093739999999" blue="0.50131284269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </switch>
+                                                    <segments>
+                                                        <segment title="Yes"/>
+                                                        <segment title="No"/>
+                                                    </segments>
+                                                    <color key="tintColor" red="1" green="0.0012486093739999999" blue="0.50131284269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </segmentedControl>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ejS-Kd-EaA" firstAttribute="top" secondItem="lKW-Db-vvS" secondAttribute="topMargin" constant="3" id="MCn-sE-09Y"/>
-                                                <constraint firstItem="ejS-Kd-EaA" firstAttribute="leading" secondItem="lKW-Db-vvS" secondAttribute="leadingMargin" constant="20" id="OlX-hs-Vi6"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="d3H-7h-UQu" secondAttribute="trailing" constant="15" id="em3-l6-gQT"/>
-                                                <constraint firstItem="d3H-7h-UQu" firstAttribute="top" secondItem="lKW-Db-vvS" secondAttribute="topMargin" constant="-2" id="yXk-Cs-1lo"/>
+                                                <constraint firstItem="ejS-Kd-EaA" firstAttribute="leading" secondItem="lKW-Db-vvS" secondAttribute="leading" constant="20" id="4eC-sD-CMG"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="D4B-sT-RKb" secondAttribute="trailing" id="A6V-GN-yXF"/>
+                                                <constraint firstItem="ejS-Kd-EaA" firstAttribute="centerY" secondItem="lKW-Db-vvS" secondAttribute="centerY" id="CVM-Ny-f1j"/>
+                                                <constraint firstItem="D4B-sT-RKb" firstAttribute="centerY" secondItem="lKW-Db-vvS" secondAttribute="centerY" id="M3j-tt-U5e"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -256,6 +261,7 @@
                     <connections>
                         <outlet property="departmentList" destination="R3X-3l-rjO" id="fzl-yD-Igf"/>
                         <outlet property="name" destination="8Pn-lF-Amy" id="6rR-4x-eYk"/>
+                        <outlet property="over18" destination="D4B-sT-RKb" id="sZr-GY-MGV"/>
                         <outlet property="phone" destination="lV9-Cl-4pB" id="dIK-4m-tsa"/>
                         <segue destination="UHC-8e-N2p" kind="unwind" identifier="cancelApplicationSegue" unwindAction="unwindFromApplicationWithSegue:" id="B0u-aU-LV8"/>
                     </connections>

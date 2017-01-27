@@ -16,6 +16,7 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var departmentList: UILabel!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var phone: UITextField!
+    @IBOutlet weak var over18: UISegmentedControl!
 
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -27,6 +28,7 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
         navigationItem.leftBarButtonItem?.tintColor = .white;
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Application", style: .plain, target: self, action: #selector(cancel));
         navigationController?.navigationBar.tintColor = .white;
+        over18.selectedSegmentIndex = UISegmentedControlNoSegment
         name.delegate = self
         phone.delegate = self
     }

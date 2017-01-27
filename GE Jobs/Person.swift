@@ -23,6 +23,13 @@ class Person {
         "sunday": []
     ]
 
+    func isValid() -> Bool {
+        if let _name = name, let _phone = phone, let _isOver18 = isOver18 {
+            return _name.characters.count > 0 && _phone.characters.count > 0 && _isOver18
+        }
+        return false
+    }
+
     func asDictionary() -> [String : Any] {
         var json : [String : [String : Any]] = [
             "person": [

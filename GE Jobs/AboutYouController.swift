@@ -23,7 +23,7 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
         person = Person()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Apply", style: .done, target: self, action: #selector(done));
         navigationItem.rightBarButtonItem?.tintColor = .white;
-        //navigationItem.rightBarButtonItem?.isEnabled = false;
+        navigationItem.rightBarButtonItem?.isEnabled = false;
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel));
         navigationItem.leftBarButtonItem?.tintColor = .white;
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Application", style: .plain, target: self, action: #selector(cancel));
@@ -31,6 +31,10 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
         over18.selectedSegmentIndex = UISegmentedControlNoSegment
         name.delegate = self
         phone.delegate = self
+    }
+
+    func validate() {
+        navigationItem.rightBarButtonItem?.isEnabled = person.isValid()
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -45,6 +49,7 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
                 print("Unknown field")
             }
         }
+        validate()
         return true
     }
 
@@ -57,6 +62,7 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
             default:
                 person.isOver18 = nil
         }
+        validate()
     }
 
     func done() {

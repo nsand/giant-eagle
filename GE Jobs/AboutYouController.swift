@@ -12,6 +12,7 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
 
     var person: Person!
     var departmentDataSource: DepartmentDataSource = DepartmentDataSource()
+    let phoneDelegate = PhoneInputDelegate()
 
     @IBOutlet weak var departmentList: UILabel!
     @IBOutlet weak var name: UITextField!
@@ -38,22 +39,19 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-
+        var shouldUpdate = true
         if let value = (textField.text as? NSString)?.replacingCharacters(in: range, with: string) {
             switch textField {
             case name:
                 person.name = value
             case phone:
-                if string.characters.count != 0 && Int(string) == nil {
-                    return false
-                }
-                person.phone = value
+                shouldUpdate = phoneDelegate.textField(textField, shouldChangeCharactersIn: range, replacementString: string)
             default:
                 print("Unknown field")
             }
         }
         validate()
-        return true
+        return shouldUpdate
     }
 
     @IBAction func onOver18Change(_ sender: UISegmentedControl) {

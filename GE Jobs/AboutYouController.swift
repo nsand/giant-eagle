@@ -40,8 +40,8 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         var shouldUpdate = true
-        if let value = (textField.text as? NSString)?.replacingCharacters(in: range, with: string) {
-            switch textField {
+        let value = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+        switch textField {
             case name:
                 person.name = value
             case phone:
@@ -49,7 +49,6 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
                 person.phone = textField.text
             default:
                 print("Unknown field")
-            }
         }
         validate()
         return shouldUpdate
@@ -71,8 +70,8 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
         person.availability["monday"] = ["AM", "PM"]
         person.availability["tuesday"] = ["AM"]
         print(self.person.asDictionary())
-        // let e = Email();
         /*
+        let e = Email();        
         e.send(person.asDictionary(), done: { (data, response, error) in
             if data != nil {
                 if let resp = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) {

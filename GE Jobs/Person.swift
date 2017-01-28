@@ -25,7 +25,7 @@ class Person {
 
     func isValid() -> Bool {
         if let _name = name, let _phone = phone {
-            return _name.characters.count > 0 && _phone.characters.count > 0 && isOver18 != nil
+            return _name.characters.count > 0 && _phone.characters.count == 16 && isOver18 != nil
         }
         return false
     }

@@ -16,14 +16,12 @@ class PhoneInputDelegate: NSObject, UITextFieldDelegate {
             // It isn't a number
             return false
         }
-print(textField.text!)
+
         let delta = (textField.text! as NSString).replacingCharacters(in: range, with: string)
-print(delta)
-        var numbers = delta.components(separatedBy: NSCharacterSet.decimalDigits.inverted)
-        numbers = numbers.filter({ $0.characters.count > 0 })
-        print(numbers)
+        var numbers = delta.components(separatedBy: NSCharacterSet.decimalDigits.inverted).filter({ $0.characters.count > 0 })
+
         var formattedNumber = "1-"
-        var idx = 0
+
         if numbers[0] == "1" {
             numbers.remove(at: 0)
         }
@@ -37,25 +35,18 @@ print(delta)
             }
         }
         if numbers.count > 1 {
-            formattedNumber.append(" \(numbers[1])\(numbers[1].characters.count == 3 ? "-" : "")")
+            formattedNumber.append("-\(numbers[1])\(numbers[1].characters.count == 3 ? "-" : "")")
         }
         if numbers.count > 2 {
-            formattedNumber.append(numbers[2])
+            var endDigits = numbers[2]
+            if let endIdx = numbers[2].index(numbers[2].startIndex, offsetBy: 4, limitedBy: numbers[2].endIndex) {
+                endDigits = endDigits.substring(to: endIdx)
+            }
+            formattedNumber.append(endDigits)
         }
 
-        /*else {
-            formattedNumber.append(string)
-        }*/
         textField.text = formattedNumber
-        /*var phone = textField.text ?? ""
-        var formattedNumber = ""
-        if phone.characters.count == 0 {
-            formattedNumber = string != "1" ? "1-\(string)" : string
-        }
-        else if phone.characters.count == 4 {
-            formattedNumber = "1-(\(string))"
-        }
-        textField.text = formattedNumber*/
+
         return false
     }
 

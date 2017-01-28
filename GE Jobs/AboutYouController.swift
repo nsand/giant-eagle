@@ -45,6 +45,7 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
             case name:
                 person.name = value
             case phone:
+                print("Calling Controller")
                 shouldUpdate = phoneDelegate.textField(textField, shouldChangeCharactersIn: range, replacementString: string)
             default:
                 print("Unknown field")

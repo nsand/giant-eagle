@@ -128,7 +128,7 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
     func updateAvailabilities() {
         for i in 0..<DAYS.count {
             let availability = availabilityDataSource.availability(DAYS[i])
-            tableView.cellForRow(at: IndexPath(row: i, section: 2))?.detailTextLabel?.text = availability.joined(separator: ", ")
+            tableView.cellForRow(at: IndexPath(row: i, section: 2))?.detailTextLabel?.text = availability.count > 0 ? availability.joined(separator: ", ") : " "
             person.availability[DAYS[i].rawValue] = availability
         }
     }

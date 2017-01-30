@@ -96,8 +96,13 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
     }
 
     func updateDepartments() {
-        departmentList.text = departmentDataSource.selected.joined(separator: ", ");
-        person?.departments = departmentDataSource.selected
+        var departments = departmentDataSource.selected.joined(separator: ", ")
+        if departmentDataSource.selected.count > 3 {
+            departments = "\(departmentDataSource.selected.prefix(upTo: 3).joined(separator: ", ")) and \(departmentDataSource.selected.count - 3) more"
+        }
+        print(departments)
+        departmentList.text = departments
+        person.departments = departmentDataSource.selected
     }
 
 }

@@ -11,8 +11,19 @@ import UIKit
 class AboutYouController: UITableViewController, UITextFieldDelegate {
 
     var person: Person!
-    var departmentDataSource: DepartmentDataSource = DepartmentDataSource()
+    var departmentDataSource = DepartmentDataSource()
+    var availabilityDataSource = AvailabilityDataSource()
     let phoneDelegate = PhoneInputDelegate()
+
+    let DAYS = [
+        AvailabilityDataSource.Days.Monday,
+        AvailabilityDataSource.Days.Tuesday,
+        AvailabilityDataSource.Days.Wednesday,
+        AvailabilityDataSource.Days.Thursday,
+        AvailabilityDataSource.Days.Friday,
+        AvailabilityDataSource.Days.Saturday,
+        AvailabilityDataSource.Days.Sunday
+    ]
 
     @IBOutlet weak var departmentList: UILabel!
     @IBOutlet weak var name: UITextField!
@@ -67,8 +78,6 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
     }
 
     func done() {
-        person.availability["monday"] = ["AM", "PM"]
-        person.availability["tuesday"] = ["AM"]
         print(self.person.asDictionary())
         /*
         let e = Email();        
@@ -91,18 +100,35 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
         super.prepare(for: segue, sender: sender);
         if let destination = segue.destination as? DepartmentsController {
             // Add the department datasource to the department controller
-            destination.ds = departmentDataSource;
+            destination.ds = departmentDataSource
+        }
+        if let destination = segue.destination as? AvailabilityController {
+            if let cell = sender as? UITableViewCell {
+                if let path = tableView.indexPath(for: cell) {
+                    availabilityDataSource.activeDay = path.row < DAYS.count ? DAYS[path.row] : nil
+                }
+
+            }
+            destination.ds = availabilityDataSource
         }
     }
 
     func updateDepartments() {
         var departments = departmentDataSource.selected.joined(separator: ", ")
         if departmentDataSource.selected.count > 3 {
+            // If there are more than 3 departments, show the first 3 and how many more are selected
             departments = "\(departmentDataSource.selected.prefix(upTo: 3).joined(separator: ", ")) and \(departmentDataSource.selected.count - 3) more"
         }
-        print(departments)
+
         departmentList.text = departments
         person.departments = departmentDataSource.selected
+    }
+
+    func updateAvailabilities() {
+        for i in 0..<DAYS.count {
+            tableView.cellForRow(at: IndexPath(row: i, section: 2))?.detailTextLabel?.text = availabilityDataSource.availability(DAYS[i]).joined(separator: ", ")
+            person.availability[DAYS[i].rawValue] = availabilityDataSource.availability(DAYS[i])
+        }
     }
 
 }

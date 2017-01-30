@@ -212,6 +212,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="8c7-dX-jSd" kind="show" identifier="availabilitySegue" id="C2r-31-x5b"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="7w6-bK-ITU" detailTextLabel="Xcp-5S-ut3" style="IBUITableViewCellStyleValue1" id="i5M-sJ-bGq">
                                         <rect key="frame" x="0.0" y="304" width="768" height="44"/>
@@ -236,6 +239,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="8c7-dX-jSd" kind="show" id="RWl-wK-96b"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="QO9-Br-szo" detailTextLabel="J4J-NN-9zu" style="IBUITableViewCellStyleValue1" id="foC-EW-6qt">
                                         <rect key="frame" x="0.0" y="348" width="768" height="44"/>
@@ -260,6 +266,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="8c7-dX-jSd" kind="show" id="vWb-0r-CvO"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="iTa-Xp-gGE" detailTextLabel="KuZ-hp-90D" style="IBUITableViewCellStyleValue1" id="msK-uv-8sK">
                                         <rect key="frame" x="0.0" y="392" width="768" height="44"/>
@@ -284,6 +293,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="8c7-dX-jSd" kind="show" id="hx5-P6-r77"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="QUp-ge-76A" detailTextLabel="nI5-PC-7Ou" style="IBUITableViewCellStyleValue1" id="fPf-cV-8li">
                                         <rect key="frame" x="0.0" y="436" width="768" height="44"/>
@@ -308,6 +320,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="8c7-dX-jSd" kind="show" id="bDK-N2-OJe"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="8nY-0L-f1M" detailTextLabel="oVg-jC-qqX" style="IBUITableViewCellStyleValue1" id="XZr-el-2l3">
                                         <rect key="frame" x="0.0" y="480" width="768" height="44"/>
@@ -332,6 +347,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="8c7-dX-jSd" kind="show" id="cQS-TM-Oeg"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Dre-9g-hGn" detailTextLabel="grX-hE-EVB" style="IBUITableViewCellStyleValue1" id="E8Z-j9-BRo">
                                         <rect key="frame" x="0.0" y="524" width="768" height="44"/>
@@ -356,6 +374,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="8c7-dX-jSd" kind="show" id="I7S-dH-xRb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -386,6 +407,34 @@
             </objects>
             <point key="canvasLocation" x="854.6875" y="718.9453125"/>
         </scene>
+        <!--Availability Controller-->
+        <scene sceneID="hzh-MS-Uue">
+            <objects>
+                <tableViewController id="8c7-dX-jSd" customClass="AvailabilityController" customModule="GE_Jobs" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="NGc-QM-QmV">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="980"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OptionCell" id="7aC-ko-03n">
+                                <rect key="frame" x="0.0" y="28" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7aC-ko-03n" id="9p5-e6-Eyz">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8c7-dX-jSd" id="Lqp-Y6-gMm"/>
+                            <outlet property="delegate" destination="8c7-dX-jSd" id="cNI-Py-9fa"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gcS-gf-SFL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="855" y="1504"/>
+        </scene>
         <!--Departments Controller-->
         <scene sceneID="Uds-nO-zYh">
             <objects>
@@ -395,7 +444,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DepartmentCell" id="01t-3l-lvF">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OptionCell" id="01t-3l-lvF">
                                 <rect key="frame" x="0.0" y="28" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="01t-3l-lvF" id="doS-kP-k0f">
@@ -523,4 +572,7 @@
             <point key="canvasLocation" x="885.15625" y="36.9140625"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="C2r-31-x5b"/>
+    </inferredMetricsTieBreakers>
 </document>

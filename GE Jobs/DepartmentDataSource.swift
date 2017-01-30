@@ -52,7 +52,7 @@ class DepartmentDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DepartmentCell", for: indexPath);
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OptionCell", for: indexPath);
         let dept = self.DEPARTMENTS[indexPath.row];
         cell.textLabel?.text = dept.name;
         cell.accessoryType = dept.chosen ? .checkmark : .none;

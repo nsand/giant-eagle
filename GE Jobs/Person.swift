@@ -14,13 +14,13 @@ class Person {
     var isOver18: Bool?
     var departments = [String]()
     var availability : [String: [String]] = [
-        "monday": [],
-        "tuesday": [],
-        "wednesday": [],
-        "thursday": [],
-        "friday": [],
-        "saturday": [],
-        "sunday": []
+        "Monday": [],
+        "Tuesday": [],
+        "Wednesday": [],
+        "Thursday": [],
+        "Friday": [],
+        "Saturday": [],
+        "Sunday": []
     ]
 
     func isValid() -> Bool {
@@ -40,8 +40,8 @@ class Person {
             ]
         ]
         var personalAvailability = [String : String]()
-        for day in availability.keys {
-            personalAvailability[day] = self.availability[day]?.joined(separator: "/")
+        for (day, availabilities) in availability {
+            personalAvailability[day] = availabilities.joined(separator: "/")
         }
         json["person"]?["availability"] = personalAvailability
         return json

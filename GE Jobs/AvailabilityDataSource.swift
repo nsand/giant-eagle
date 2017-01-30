@@ -12,7 +12,7 @@ class AvailabilityDataSource: NSObject, UITableViewDataSource, UITableViewDelega
     enum Days: String {
         case Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
     }
-    let SHIFTS = ["Morning", "Daytime", "Night"]
+    let SHIFTS = ["Morning", "Day", "Night"]
     var AVAILABILITIES = [
         Days.Monday: [Bool](repeating: false, count: 3),
         Days.Tuesday: [Bool](repeating: false, count: 3),

@@ -43,6 +43,7 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
         over18.selectedSegmentIndex = UISegmentedControlNoSegment
         name.delegate = self
         phone.delegate = self
+        // Update the availabilities to clear out the details text
     }
 
     func validate() {
@@ -126,8 +127,9 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
 
     func updateAvailabilities() {
         for i in 0..<DAYS.count {
-            tableView.cellForRow(at: IndexPath(row: i, section: 2))?.detailTextLabel?.text = availabilityDataSource.availability(DAYS[i]).joined(separator: ", ")
-            person.availability[DAYS[i].rawValue] = availabilityDataSource.availability(DAYS[i])
+            let availability = availabilityDataSource.availability(DAYS[i])
+            tableView.cellForRow(at: IndexPath(row: i, section: 2))?.detailTextLabel?.text = availability.joined(separator: ", ")
+            person.availability[DAYS[i].rawValue] = availability
         }
     }
 

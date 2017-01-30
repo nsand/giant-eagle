@@ -99,4 +99,5 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
         departmentList.text = departmentDataSource.selected.joined(separator: ", ");
         person?.departments = departmentDataSource.selected
     }
+
 }

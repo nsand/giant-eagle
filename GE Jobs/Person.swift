@@ -14,13 +14,13 @@ class Person {
     var isOver18: Bool?
     var departments = [String]()
     var availability : [String: [String]] = [
-        "Monday": [],
-        "Tuesday": [],
-        "Wednesday": [],
-        "Thursday": [],
-        "Friday": [],
-        "Saturday": [],
-        "Sunday": []
+        "monday": [],
+        "tuesday": [],
+        "wednesday": [],
+        "thursday": [],
+        "friday": [],
+        "saturday": [],
+        "sunday": []
     ]
 
     func isValid() -> Bool {

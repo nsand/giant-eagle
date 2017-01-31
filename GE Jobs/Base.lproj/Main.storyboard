@@ -400,12 +400,13 @@
                         <outlet property="over18" destination="D4B-sT-RKb" id="sZr-GY-MGV"/>
                         <outlet property="phone" destination="lV9-Cl-4pB" id="dIK-4m-tsa"/>
                         <segue destination="UHC-8e-N2p" kind="unwind" identifier="cancelApplicationSegue" unwindAction="unwindFromApplicationWithSegue:" id="B0u-aU-LV8"/>
+                        <segue destination="Mrd-q5-udp" kind="presentation" identifier="submissionSegue" id="YgC-eR-3MU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rqt-ug-Jl8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="UHC-8e-N2p" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="854.6875" y="718.9453125"/>
+            <point key="canvasLocation" x="844" y="768"/>
         </scene>
         <!--Availability Controller-->
         <scene sceneID="hzh-MS-Uue">
@@ -434,6 +435,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcS-gf-SFL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="855" y="1504"/>
+        </scene>
+        <!--Submission Controller-->
+        <scene sceneID="uYQ-27-bm3">
+            <objects>
+                <viewController id="Mrd-q5-udp" customClass="SubmissionController" customModule="GE_Jobs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LX8-ln-yik"/>
+                        <viewControllerLayoutGuide type="bottom" id="EFb-Y8-RdB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YoS-6g-jaG">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submitting Your Application..." textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="nAu-ll-vCH">
+                                <rect key="frame" x="20" y="412" width="728" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="URv-dX-2mb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ydd-A3-BoB">
+                                <rect key="frame" x="374" y="637" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="3qB-OV-zp5"/>
+                                    <constraint firstAttribute="height" constant="20" id="tO0-gK-ttD"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvV-DH-Xze">
+                                <rect key="frame" x="341" y="665" width="87" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="IOu-Sf-s5D"/>
+                                    <constraint firstAttribute="height" constant="30" id="ih8-5L-Q2D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Retry">
+                                    <color key="titleColor" red="1" green="0.0012486093739999999" blue="0.50131284269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onRetry:" destination="Mrd-q5-udp" eventType="touchUpInside" id="WYi-wg-lHG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ydd-A3-BoB" firstAttribute="top" secondItem="nAu-ll-vCH" secondAttribute="bottom" constant="25" id="2Eo-It-A78"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ydd-A3-BoB" secondAttribute="trailing" constant="354" id="BZ2-Y4-Fec"/>
+                            <constraint firstItem="nAu-ll-vCH" firstAttribute="centerY" secondItem="YoS-6g-jaG" secondAttribute="centerY" id="EP8-vB-Pgw"/>
+                            <constraint firstItem="Ydd-A3-BoB" firstAttribute="leading" secondItem="YoS-6g-jaG" secondAttribute="leadingMargin" constant="354" id="FbC-9r-OmG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nAu-ll-vCH" secondAttribute="trailing" id="QPD-1Q-CmH"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="nAu-ll-vCH" secondAttribute="leading" id="RXp-qd-VRe"/>
+                            <constraint firstItem="wvV-DH-Xze" firstAttribute="top" secondItem="nAu-ll-vCH" secondAttribute="bottom" constant="53" id="S4n-GZ-5B0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wvV-DH-Xze" secondAttribute="trailing" constant="320" id="XXZ-7C-9f9"/>
+                            <constraint firstItem="nAu-ll-vCH" firstAttribute="centerX" secondItem="YoS-6g-jaG" secondAttribute="centerX" id="cYe-pX-aBu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="retry" destination="wvV-DH-Xze" id="hxE-Ti-3bM"/>
+                        <outlet property="spinner" destination="Ydd-A3-BoB" id="kUF-Wb-e4D"/>
+                        <outlet property="submissionStatus" destination="nAu-ll-vCH" id="5ol-iE-VYv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W6L-E4-EoH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1527.34375" y="1504.6875"/>
         </scene>
         <!--Departments Controller-->
         <scene sceneID="Uds-nO-zYh">

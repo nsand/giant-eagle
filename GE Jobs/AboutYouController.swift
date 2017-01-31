@@ -80,6 +80,7 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
 
     func done() {
         print(self.person.asDictionary())
+        self.performSegue(withIdentifier: "submissionSegue", sender: self)
         /*
         let e = Email();        
         e.send(person.asDictionary(), done: { (data, response, error) in
@@ -112,6 +113,9 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
             }
             destination.ds = availabilityDataSource
         }
+        if let destination = segue.destination as? SubmissionController {
+            destination.person = person
+        }
     }
 
     func updateDepartments() {
@@ -129,7 +133,7 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
         for i in 0..<DAYS.count {
             let availability = availabilityDataSource.availability(DAYS[i])
             tableView.cellForRow(at: IndexPath(row: i, section: 2))?.detailTextLabel?.text = availability.count > 0 ? availability.joined(separator: ", ") : " "
-            person.availability[DAYS[i].rawValue] = availability
+            person.availability[DAYS[i].rawValue.lowercased()] = availability
         }
     }
 

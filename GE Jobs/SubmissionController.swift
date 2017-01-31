@@ -44,7 +44,9 @@ class SubmissionController: UIViewController, UINavigationControllerDelegate {
                                 print(resp)
                             }
                         }
-                        Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: { (timer) in print("Unwind") })
+                        Timer.scheduledTimer(withTimeInterval: 10, repeats: false, block: { (timer) in
+                            self.performSegue(withIdentifier: "resetApplicationSegue", sender: self)
+                        })
                     }
                 })
             })

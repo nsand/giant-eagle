@@ -79,7 +79,6 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
     }
 
     func done() {
-        print(self.person.asDictionary())
         self.performSegue(withIdentifier: "submissionSegue", sender: self)
         /*
         let e = Email();        

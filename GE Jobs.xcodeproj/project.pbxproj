@@ -21,7 +21,6 @@
 		E53A02801E2BCE5300647EB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53A027E1E2BCE5300647EB0 /* Main.storyboard */; };
 		E53A02851E2BCE5300647EB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53A02831E2BCE5300647EB0 /* LaunchScreen.storyboard */; };
 		E53A028D1E2BCF8C00647EB0 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A028C1E2BCF8C00647EB0 /* SplashController.swift */; };
-		E53A028F1E2BD45C00647EB0 /* JobApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A028E1E2BD45C00647EB0 /* JobApplicationController.swift */; };
 		E53A02931E2BDC6000647EB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E53A02921E2BDC6000647EB0 /* Assets.xcassets */; };
 		E53A02951E2BF27000647EB0 /* DepartmentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A02941E2BF27000647EB0 /* DepartmentDataSource.swift */; };
 		E53A02971E2DBBCB00647EB0 /* AboutYouController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A02961E2DBBCB00647EB0 /* AboutYouController.swift */; };
@@ -45,7 +44,6 @@
 		E53A02841E2BCE5300647EB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E53A02861E2BCE5300647EB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E53A028C1E2BCF8C00647EB0 /* SplashController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
-		E53A028E1E2BD45C00647EB0 /* JobApplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobApplicationController.swift; sourceTree = "<group>"; };
 		E53A02921E2BDC6000647EB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E53A02941E2BF27000647EB0 /* DepartmentDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentDataSource.swift; sourceTree = "<group>"; };
 		E53A02961E2DBBCB00647EB0 /* AboutYouController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutYouController.swift; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 				E53A02831E2BCE5300647EB0 /* LaunchScreen.storyboard */,
 				E53A02861E2BCE5300647EB0 /* Info.plist */,
 				E523F3981E3707C500CBD544 /* Email.plist */,
-				E53A028E1E2BD45C00647EB0 /* JobApplicationController.swift */,
 				E53A02941E2BF27000647EB0 /* DepartmentDataSource.swift */,
 				E53A02961E2DBBCB00647EB0 /* AboutYouController.swift */,
 				E5D5BEC31E2DDA9D0021F0D4 /* DepartmentsController.swift */,
@@ -180,7 +177,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E53A02951E2BF27000647EB0 /* DepartmentDataSource.swift in Sources */,
-				E53A028F1E2BD45C00647EB0 /* JobApplicationController.swift in Sources */,
 				E523F3A11E4031DE00CBD544 /* SubmissionController.swift in Sources */,
 				E523F39B1E3BFDBD00CBD544 /* PhoneInputDelegate.swift in Sources */,
 				E53A027D1E2BCE5300647EB0 /* ViewController.swift in Sources */,

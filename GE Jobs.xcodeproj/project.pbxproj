@@ -14,6 +14,8 @@
 		E523F39D1E3EE78600CBD544 /* AvailabilityDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E523F39C1E3EE78600CBD544 /* AvailabilityDataSource.swift */; };
 		E523F39F1E3EEBFE00CBD544 /* AvailabilityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E523F39E1E3EEBFE00CBD544 /* AvailabilityController.swift */; };
 		E523F3A11E4031DE00CBD544 /* SubmissionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E523F3A01E4031DE00CBD544 /* SubmissionController.swift */; };
+		E523F3A31E43FF6B00CBD544 /* JobApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E523F3A21E43FF6B00CBD544 /* JobApplication.swift */; };
+		E523F3A51E4402AC00CBD544 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E523F3A41E4402AC00CBD544 /* main.swift */; };
 		E53A027B1E2BCE5300647EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A027A1E2BCE5300647EB0 /* AppDelegate.swift */; };
 		E53A027D1E2BCE5300647EB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A027C1E2BCE5300647EB0 /* ViewController.swift */; };
 		E53A02801E2BCE5300647EB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53A027E1E2BCE5300647EB0 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 		E523F39C1E3EE78600CBD544 /* AvailabilityDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityDataSource.swift; sourceTree = "<group>"; };
 		E523F39E1E3EEBFE00CBD544 /* AvailabilityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityController.swift; sourceTree = "<group>"; };
 		E523F3A01E4031DE00CBD544 /* SubmissionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmissionController.swift; sourceTree = "<group>"; };
+		E523F3A21E43FF6B00CBD544 /* JobApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobApplication.swift; sourceTree = "<group>"; };
+		E523F3A41E4402AC00CBD544 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E53A02771E2BCE5300647EB0 /* GE Jobs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GE Jobs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53A027A1E2BCE5300647EB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E53A027C1E2BCE5300647EB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 				E523F39C1E3EE78600CBD544 /* AvailabilityDataSource.swift */,
 				E523F39E1E3EEBFE00CBD544 /* AvailabilityController.swift */,
 				E523F3A01E4031DE00CBD544 /* SubmissionController.swift */,
+				E523F3A21E43FF6B00CBD544 /* JobApplication.swift */,
+				E523F3A41E4402AC00CBD544 /* main.swift */,
 			);
 			path = "GE Jobs";
 			sourceTree = "<group>";
@@ -184,7 +190,9 @@
 				E523F3971E35B2B500CBD544 /* Person.swift in Sources */,
 				E523F39D1E3EE78600CBD544 /* AvailabilityDataSource.swift in Sources */,
 				E523F3951E306EC400CBD544 /* Email.swift in Sources */,
+				E523F3A51E4402AC00CBD544 /* main.swift in Sources */,
 				E523F39F1E3EEBFE00CBD544 /* AvailabilityController.swift in Sources */,
+				E523F3A31E43FF6B00CBD544 /* JobApplication.swift in Sources */,
 				E53A028D1E2BCF8C00647EB0 /* SplashController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

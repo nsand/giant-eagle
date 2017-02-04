@@ -15,6 +15,9 @@ class AvailabilityController: UITableViewController, UINavigationControllerDeleg
         super.viewDidLoad()
         navigationController?.delegate = self
         navigationItem.title = "Availability"
+        if let day = ds?.activeDay {
+            navigationItem.title = "Availability - \(day.rawValue)"
+        }
 
         tableView.dataSource = ds
         tableView.delegate = ds

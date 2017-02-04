@@ -43,14 +43,17 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
         over18.selectedSegmentIndex = UISegmentedControlNoSegment
         name.delegate = self
         phone.delegate = self
+        // Hides the extra blank rows in the table
         tableView.tableFooterView = UIView()
     }
 
     func validate() {
+        // Check if the person's state is valid before enabling the Apply button
         navigationItem.rightBarButtonItem?.isEnabled = person.isValid()
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // Update the person object based on which field is being typed into
         var shouldUpdate = true
         let value = (textField.text! as NSString).replacingCharacters(in: range, with: string)
         switch textField {
@@ -67,6 +70,7 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
     }
 
     @IBAction func onOver18Change(_ sender: UISegmentedControl) {
+        // Toggle the peson's over 18 status
         switch sender.selectedSegmentIndex {
             case 0:
                 person.isOver18 = true
@@ -79,22 +83,13 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
     }
 
     func done() {
+        // Move to the submission page, which will email the application
         self.performSegue(withIdentifier: "submissionSegue", sender: self)
-        /*
-        let e = Email();        
-        e.send(person.asDictionary(), done: { (data, response, error) in
-            if data != nil {
-                if let resp = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) {
-                  print(resp)  
-                }
-            }
-        });
-        */
     }
 
     func cancel() {
+        // Cancels the application
         self.performSegue(withIdentifier: "cancelApplicationSegue", sender: self);
-        // navigationController?.pushViewController(DepartmentsController(), animated: true)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -104,6 +99,7 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
             destination.ds = departmentDataSource
         }
         if let destination = segue.destination as? AvailabilityController {
+            // When tapping a table view cell, make sure we know which day was tapped
             if let cell = sender as? UITableViewCell {
                 if let path = tableView.indexPath(for: cell) {
                     availabilityDataSource.activeDay = path.row < DAYS.count ? DAYS[path.row] : nil
@@ -113,11 +109,13 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
             destination.ds = availabilityDataSource
         }
         if let destination = segue.destination as? SubmissionController {
+            // Going to submit the application, let it know about the person
             destination.person = person
         }
     }
 
     func updateDepartments() {
+        // Called when coming back from the departments view
         var departments = departmentDataSource.selected.joined(separator: ", ")
         if departmentDataSource.selected.count > 3 {
             // If there are more than 3 departments, show the first 3 and how many more are selected
@@ -129,6 +127,7 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
     }
 
     func updateAvailabilities() {
+        // Called when coming back from the availability view
         for i in 0..<DAYS.count {
             let availability = availabilityDataSource.availability(DAYS[i])
             tableView.cellForRow(at: IndexPath(row: i, section: 2))?.detailTextLabel?.text = availability.count > 0 ? availability.joined(separator: ", ") : " "

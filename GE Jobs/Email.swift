@@ -25,8 +25,8 @@ class Email {
                 "TemplateModel": data,
                 "InlineCss": true,
                 "From": config["from"]!,
-                "To": config["to"]!/*, TODO: Add this back
-                "Bcc": config["bcc"]!*/
+                "To": config["to"]!,
+                "Bcc": config["bcc"]!
             ]
 
             request.httpMethod = "POST"

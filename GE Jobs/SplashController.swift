@@ -16,17 +16,19 @@ class SplashController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
         self.brightness = UIScreen.main.brightness;
-        queueScreenDimming();
+        // queueScreenDimming();
     }
 
     /**
      * Creates a timer that will dim the screen after a bit
      */
+    /*
     func queueScreenDimming() {
         timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: {(timer) in
             UIScreen.main.brightness = 0.7;
         });
     }
+    */
 
     @IBAction func tapStart(_ sender: UITapGestureRecognizer) {
         // Once the screen has been tapped, stop the timer and bring up the brightness
@@ -36,6 +38,6 @@ class SplashController : UIViewController {
     }
 
     @IBAction func unwindFromApplication(segue: UIStoryboardSegue) {
-        queueScreenDimming();
+        // queueScreenDimming();
     }
 }

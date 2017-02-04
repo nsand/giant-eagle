@@ -25,6 +25,7 @@ class AvailabilityController: UITableViewController, UINavigationControllerDeleg
     }
 
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        // When the user navigates back to the About You page, update the list of availabilities
         if let aboutController = viewController as? AboutYouController {
             aboutController.updateAvailabilities();
         }

@@ -26,9 +26,11 @@ class SubmissionController: UIViewController, UINavigationControllerDelegate {
     }
 
     func submitApplication() {
+        // When the user submits an application, show a spinner
         retry.isHidden = true
         spinner.startAnimating()
         if let person = self.person {
+            // Send off the email using the person's info. When it's done, give status and go back to the landing page
             let e = Email();
             e.send(person.asDictionary(), done: { (data, response, error) in
                 DispatchQueue.main.async(execute: {

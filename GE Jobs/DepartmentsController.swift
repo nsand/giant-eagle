@@ -23,6 +23,7 @@ class DepartmentsController: UITableViewController, UINavigationControllerDelega
         tableView.tableFooterView = UIView()
     }
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        // When going back, update the user's department selection
         if let aboutController = viewController as? AboutYouController {
             aboutController.updateDepartments();
         }

@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ * A data source for picking one's work availability
+ */
 class AvailabilityDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     enum Days: String {
         case Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
@@ -39,6 +42,7 @@ class AvailabilityDataSource: NSObject, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // For the row, pick the appropriate shift, and if it is chosen, show a checkmark
         let cell = tableView.dequeueReusableCell(withIdentifier: "OptionCell", for: indexPath);
         cell.textLabel?.text = SHIFTS[indexPath.row]
         if let day = activeDay {
@@ -49,6 +53,7 @@ class AvailabilityDataSource: NSObject, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // When the user selects the row, toggle the availability state
         if let day = activeDay {
             AVAILABILITIES[day]![indexPath.row] = !AVAILABILITIES[day]![indexPath.row]
             tableView.cellForRow(at: indexPath)?.accessoryType = AVAILABILITIES[day]![indexPath.row] ? .checkmark : .none

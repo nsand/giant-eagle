@@ -16,6 +16,7 @@ class JobApplication: UIApplication {
     }
     override func sendEvent(_ event: UIEvent) {
         super.sendEvent(event)
+        // Watch for touches; this will reset the timeout
         if let touches = event.allTouches {
             if touches.count > 0 {
                 for touch in touches {
@@ -35,6 +36,7 @@ class JobApplication: UIApplication {
     }
 
     func showAlert() {
+        // Inactivity period reached, show an alert allowing the user to continue. If there's no response, reset
         let alert = UIAlertController(title: "Are you still there?", message: "It's been awhile without activity. Are you still there?", preferredStyle: .alert)
         let confirmationTimer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: false, block: { (timer) in
             alert.dismiss(animated: true, completion: nil)

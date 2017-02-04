@@ -52,6 +52,7 @@ class DepartmentDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Show all of the departments that are available
         let cell = tableView.dequeueReusableCell(withIdentifier: "OptionCell", for: indexPath);
         let dept = self.DEPARTMENTS[indexPath.row];
         cell.textLabel?.text = dept.name;
@@ -60,6 +61,7 @@ class DepartmentDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // When a row is selected, toggle the user's interest in that department
         self.DEPARTMENTS[indexPath.row].chosen = !self.DEPARTMENTS[indexPath.row].chosen;
         tableView.cellForRow(at: indexPath)?.accessoryType = self.DEPARTMENTS[indexPath.row].chosen ? .checkmark : .none;
     }

@@ -41,7 +41,17 @@ class Person {
         ]
         var personalAvailability = [String : String]()
         for (day, availabilities) in availability {
-            personalAvailability[day] = availabilities.joined(separator: "/")
+            // Converts the full shift name into a short form and joins with a /
+            personalAvailability[day] = availabilities.map({
+                switch $0 {
+                    case "Morning":
+                        return "AM"
+                    case "Night":
+                        return "PM"
+                    default:
+                        return $0
+                }
+            }).joined(separator: "/")
         }
         json["person"]?["availability"] = personalAvailability
         return json

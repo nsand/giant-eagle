@@ -12,6 +12,8 @@ class PhoneInputDelegate: NSObject, UITextFieldDelegate {
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
+        // As the user types a phone number, automatically start formatting it for him/her
+
         if string.characters.count > 0 && Int(string) == nil {
             // It isn't a number
             return false

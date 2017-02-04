@@ -22,8 +22,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GiantEagle" translatesAutoresizingMaskIntoConstraints="NO" id="Qa3-3J-cGK">
+                                <rect key="frame" x="264" y="332.5" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Hic-x0-hIF"/>
+                                    <constraint firstAttribute="width" constant="240" id="hb4-oA-Ey6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Now Hiring" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dv3-EH-Iab">
+                                <rect key="frame" x="118" y="464" width="567" height="117"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="567" id="DCt-x1-TVv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="94"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap anywhere to start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNU-0j-Now">
-                                <rect key="frame" x="238" y="499" width="280" height="26"/>
+                                <rect key="frame" x="244" y="648" width="280" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -32,9 +48,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="aNU-0j-Now" secondAttribute="trailing" constant="230" id="EEn-08-28i"/>
-                            <constraint firstItem="aNU-0j-Now" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="218" id="XbG-zE-Oc8"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aNU-0j-Now" secondAttribute="bottom" constant="499" id="dKt-6g-ZhL"/>
+                            <constraint firstItem="dv3-EH-Iab" firstAttribute="top" secondItem="Qa3-3J-cGK" secondAttribute="bottom" constant="8" id="44t-VQ-9L3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aNU-0j-Now" secondAttribute="trailing" constant="224" id="EEn-08-28i"/>
+                            <constraint firstItem="aNU-0j-Now" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="224" id="XbG-zE-Oc8"/>
+                            <constraint firstItem="dv3-EH-Iab" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a3b-qe-Gfc"/>
+                            <constraint firstItem="Qa3-3J-cGK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aZK-E8-uXY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aNU-0j-Now" secondAttribute="bottom" constant="350" id="dKt-6g-ZhL"/>
+                            <constraint firstItem="aNU-0j-Now" firstAttribute="top" secondItem="dv3-EH-Iab" secondAttribute="bottom" constant="67" id="gG9-SM-6un"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Whv-j6-GtO" appends="YES" id="iCR-nL-CFs"/>
@@ -51,7 +71,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="33" y="37"/>
+            <point key="canvasLocation" x="32.8125" y="36.9140625"/>
         </scene>
         <!--Application-->
         <scene sceneID="ALz-wM-84b">
@@ -140,7 +160,7 @@
                                                         <segment title="Yes"/>
                                                         <segment title="No"/>
                                                     </segments>
-                                                    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.92941176469999998" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="onOver18Change:" destination="vWr-qX-ZRP" eventType="valueChanged" id="Wy2-zi-kK3"/>
                                                     </connections>
@@ -472,7 +492,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Retry">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.92941176469999998" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="onRetry:" destination="Mrd-q5-udp" eventType="touchUpInside" id="WYi-wg-lHG"/>
@@ -539,7 +559,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="oa2-n1-0fM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.92941176470588238" green="0.10980392156862745" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -553,6 +573,9 @@
             <point key="canvasLocation" x="33" y="719"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="GiantEagle" width="378" height="232"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="C2r-31-x5b"/>
     </inferredMetricsTieBreakers>

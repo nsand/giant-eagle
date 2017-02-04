@@ -18,6 +18,7 @@ class AvailabilityController: UITableViewController, UINavigationControllerDeleg
 
         tableView.dataSource = ds
         tableView.delegate = ds
+        tableView.tableFooterView = UIView()
     }
 
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {

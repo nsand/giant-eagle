@@ -43,7 +43,7 @@ class AboutYouController: UITableViewController, UITextFieldDelegate {
         over18.selectedSegmentIndex = UISegmentedControlNoSegment
         name.delegate = self
         phone.delegate = self
-        // Update the availabilities to clear out the details text
+        tableView.tableFooterView = UIView()
     }
 
     func validate() {

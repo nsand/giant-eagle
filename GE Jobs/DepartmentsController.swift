@@ -20,6 +20,7 @@ class DepartmentsController: UITableViewController, UINavigationControllerDelega
 
         tableView.dataSource = ds;
         tableView.delegate = ds;
+        tableView.tableFooterView = UIView()
     }
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         if let aboutController = viewController as? AboutYouController {

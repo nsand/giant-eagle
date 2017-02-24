@@ -25,6 +25,18 @@ class SubmissionController: UIViewController, UINavigationControllerDelegate {
         submitApplication()
     }
 
+    func submissionComplete(_ data: Data?) {
+        self.submissionStatus.text = "That's it! Your application has been submitted. We'll contact you soon."
+        if data != nil {
+            if let resp = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) {
+                print(resp)
+            }
+        }
+        Timer.scheduledTimer(withTimeInterval: 10, repeats: false, block: { (timer) in
+            self.performSegue(withIdentifier: "resetApplicationSegue", sender: self)
+        })
+    }
+
     func submitApplication() {
         // When the user submits an application, show a spinner
         retry.isHidden = true
@@ -36,19 +48,19 @@ class SubmissionController: UIViewController, UINavigationControllerDelegate {
                 DispatchQueue.main.async(execute: {
                     self.spinner.stopAnimating()
                     if error != nil {
-                        self.retry.isHidden = false
-                        self.submissionStatus.text = "Something went wrong submitting your application."
+                        if data != nil {
+                            // This seems to be the case when the service responds with an error
+                            self.retry.isHidden = false
+                            self.submissionStatus.text = "Something went wrong submitting your application."
+                        }
+                        else {
+                            // Probably a network error
+                            Email.queue(person)
+                            self.submissionComplete(nil)
+                        }
                     }
                     else {
-                        self.submissionStatus.text = "That's it! Your application has been submitted. We'll contact you soon."
-                        if data != nil {
-                            if let resp = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) {
-                                print(resp)
-                            }
-                        }
-                        Timer.scheduledTimer(withTimeInterval: 10, repeats: false, block: { (timer) in
-                            self.performSegue(withIdentifier: "resetApplicationSegue", sender: self)
-                        })
+                        self.submissionComplete(data)
                     }
                 })
             })

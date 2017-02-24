@@ -10,9 +10,28 @@ import Foundation
 
 class Email {
 
+    static var QUEUE = [Person]()
+    static var QUEUE_TIMER: Timer?
     static let API = "https://api.postmarkapp.com/email/withTemplate"
     static var CONFIG : [String: String]? {
         return NSDictionary(contentsOfFile: Bundle.main.path(forResource: "Email", ofType: "plist")!) as? [String: String]
+    }
+
+    static func queue(_ person: Person) {
+        QUEUE.append(person)
+        if QUEUE_TIMER == nil {
+            QUEUE_TIMER = Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: {(t) in
+                while QUEUE.count > 0 {
+                    let p = QUEUE.removeFirst()
+                    Email().send(p.asDictionary(), done: { (data, response, err) in
+                        if err != nil {
+                            // Well, it failed to send again; hopefully, we can send it later
+                            Email.queue(person)
+                        }
+                    })
+                }
+            })
+        }
     }
 
     func send(_ data: [String : Any], done: @escaping (Data?, URLResponse?, Error?) -> Void) {

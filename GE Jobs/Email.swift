@@ -26,7 +26,7 @@ class Email {
                     Email().send(p.asDictionary(), done: { (data, response, err) in
                         if err != nil {
                             // Well, it failed to send again; hopefully, we can send it later
-                            Email.queue(person)
+                            Email.queue(p)
                         }
                     })
                 }
